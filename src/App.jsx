@@ -13,7 +13,8 @@ import {
 import logoSrc from "./assets/withone-logo.png";
 
 const kakaoLink = "https://pf.kakao.com/_sxgvsX";
-const phoneLink = "tel:010-8317-1656";
+const phoneNumber = "010-8317-1656";
+const phoneLink = `tel:${phoneNumber}`;
 
 const programs = [
   "사회복지사 2급",
