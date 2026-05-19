@@ -228,18 +228,18 @@ export default function App() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-          <div className="grid gap-8 rounded-[2.5rem] bg-lime-700 p-8 text-white shadow-2xl shadow-lime-900/10 md:grid-cols-[0.95fr_1.05fr] md:p-12">
+          <div className="grid gap-8 rounded-[2.5rem] border border-slate-200 bg-white p-8 text-slate-950 shadow-xl shadow-lime-900/5 md:grid-cols-[0.95fr_1.05fr] md:p-12">
             <div>
-              <p className="text-sm font-bold tracking-[0.24em] text-lime-100">SOCIAL WORKER LEVEL 2</p>
+              <p className="text-sm font-bold tracking-[0.24em] text-lime-700">SOCIAL WORKER LEVEL 2</p>
               <h2 className="mt-4 text-3xl font-black md:text-5xl">사회복지사 2급, 시작 전 설계가 중요합니다.</h2>
-              <p className="mt-6 leading-9 text-lime-50">
+              <p className="mt-6 leading-9 text-slate-600">
                 사회복지사 2급은 과목 이수와 실습, 행정 절차가 함께 진행되는 과정입니다. 처음 플랜이 잘못되면 기간과 비용이 늘어날 수 있어 시작 전 확인이 중요합니다.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {["필수·선택 과목 확인", "최종학력별 과정 설계", "실습 가능 일정 확인", "자격증 신청 시기 안내"].map((item) => (
-                <div key={item} className="rounded-3xl bg-white/12 p-6 backdrop-blur">
-                  <CheckCircle2 className="mb-4 h-7 w-7 text-lime-100" />
+                <div className="rounded-3xl border border-lime-100 bg-lime-50 p-6">
+  <CheckCircle2 className="mb-4 h-7 w-7 text-lime-600" />
                   <p className="text-lg font-black">{item}</p>
                 </div>
               ))}
