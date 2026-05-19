@@ -82,6 +82,20 @@ const faqs = [
   },
 ];
 
+function handlePhoneClick(event) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (!isMobile) {
+    event.preventDefault();
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(phoneNumber);
+    }
+
+    alert(`빠른 상담 번호가 복사되었습니다.\n${phoneNumber}`);
+  }
+}
+
 function W1Logo() {
   return (
     <div className="flex items-center gap-3">
@@ -136,7 +150,7 @@ export default function App() {
             <a href={kakaoLink} target="_blank" rel="noreferrer" className="rounded-full bg-slate-950 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-lime-800">
               카카오톡 상담
             </a>
-            <a href={phoneLink} className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:border-lime-500 hover:text-lime-800">
+            <a href={phoneLink} onClick={handlePhoneClick} className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:border-lime-500 hover:text-lime-800">
               빠른 상담
             </a>
           </div>
@@ -163,7 +177,7 @@ export default function App() {
                 <a href={kakaoLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-lime-700 px-8 py-4 text-base font-bold text-white shadow-xl shadow-lime-900/10 transition hover:bg-lime-800">
                   카카오톡 상담 <MessageCircle className="h-5 w-5" />
                 </a>
-                <a href={phoneLink} className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-bold text-slate-950 shadow-sm transition hover:border-lime-500 hover:text-lime-800">
+                <a href={phoneLink} onClick={handlePhoneClick} className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-bold text-slate-950 shadow-sm transition hover:border-lime-500 hover:text-lime-800">
                   빠른 전화 상담 <ArrowRight className="h-5 w-5" />
                 </a>
               </div>
@@ -293,7 +307,7 @@ export default function App() {
                   <a href={kakaoLink} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-lime-700 px-7 py-4 font-bold text-white transition hover:bg-lime-800">
                     카카오톡 채널 바로가기 <MessageCircle className="h-5 w-5" />
                   </a>
-                  <a href={phoneLink} className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 font-bold text-slate-950 transition hover:border-lime-500 hover:text-lime-800">
+                  <a href={phoneLink} onClick={handlePhoneClick} className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 font-bold text-slate-950 transition hover:border-lime-500 hover:text-lime-800">
                     빠른 상담 010-8317-1656 <ArrowRight className="h-5 w-5" />
                   </a>
                 </div>
